@@ -1,11 +1,12 @@
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebTest {
 
-    public static void main(String[] args) {
-
+@Test
+    public void main() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         String title = driver.getTitle();

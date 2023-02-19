@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class FirstTest extends WebDriverSettings{
 
     @Test
@@ -17,7 +18,18 @@ public class FirstTest extends WebDriverSettings{
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         String title = driver.getTitle();
         Assert.assertEquals("XYZ Bank", title);
-        WebElement element = driver.findElement(By.cssSelector("(//button[@class='btn btn-primary btn-lg'])[1]"));
+
+        WebElement button = driver.findElement(By.xpath("(//button[@class='btn btn-primary btn-lg'])[1]"));
+        button.click();
+
+        WebElement inputLogin = driver.findElement(By.xpath("//div[@class='form-group']"));
+        inputLogin.click();
+
+        WebElement choisName = driver.findElement(By.xpath("//option[@value='1']"));
+        choisName.click();
+
+
+
     }
 }
 
